@@ -1,0 +1,17 @@
+{
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120,
+    "plugins": ["./node_modules/prettier-plugin-astro", "./node_modules/prettier-plugin-tailwindcss"],
+    "pluginSearchDirs": false,
+    "overrides": [
+        {
+            "files": [".*", "*.json", "*.md", "*.toml", "*.yml", "*.astro"],
+            "options": {
+                "useTabs": false
+            }
+        }
+    ]
+}

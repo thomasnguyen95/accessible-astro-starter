@@ -1,0 +1,6 @@
+**/.github
+/.astro
+/.vscode
+
+package-lock.json
+package.json
