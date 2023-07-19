@@ -2,8 +2,10 @@
 title: Software Engineer
 company: "General Dynamics Information Technology (GDIT)"
 project: "Sonar Tactical Decision Aid (STDA)"
-timeStart: 07/01/2016
-timeEnd: 08/01/2016
+yearStart: 2016
+monthStart: 7
+yearEnd: 2016
+monthEnd: 8
 tags: [C, C++, Java]
 image: test
 responsibilities: [

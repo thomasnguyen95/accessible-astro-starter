@@ -1,0 +1,48 @@
+---
+import TagButton from './TagButton.astro'
+const dateOptions = {
+    year: 'numeric',
+    month: 'long',
+}
+
+const { exp } = Astro.props
+const expData = exp.data
+const startDate = new Intl.DateTimeFormat('en-US', dateOptions).format(
+    new Date(expData.yearStart, expData.monthStart - 1)
+)
+const endDate = new Intl.DateTimeFormat('en-US', dateOptions).format(new Date(expData.yearEnd, expData.monthEnd - 1))
+---
+
+<div class="flex flex-col gap-4 rounded-md border">
+    <div class="space-content p-4">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div class="col-span-1">
+                <h3>{expData.company}</h3>
+            </div>
+            <div class="col-span-1 lg:justify-self-end">
+                <h3>{startDate} - {endDate}</h3>
+            </div>
+            <div class="col-span-1">
+                <h4>{expData.title}</h4>
+            </div>
+            <div class="col-span-1 lg:justify-self-end">
+                <h4>{expData.project}</h4>
+            </div>
+        </div>
+
+        <div class="flex inline-flex flex-row flex-nowrap items-baseline space-x-2">
+            {
+                expData.tags.map(
+                    (t): String => (
+                        <div class="flex-auto">
+                            <TagButton tag={t}> </TagButton>
+                        </div>
+                    )
+                )
+            }
+        </div>
+        <ul class="list-inside list-disc">
+            {expData.responsibilities.map((r): String => <li class="">{r}</li>)}
+        </ul>
+    </div>
+</div>

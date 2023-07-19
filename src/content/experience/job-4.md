@@ -2,8 +2,10 @@
 title: Jr. Software Engineer
 company: 'AbleVets'
 project: 'Light Electronic Action Framework (LEAF)'
-timeStart: 01/01/2019
-timeEnd: 02/01/2021
+yearStart: 2019
+monthStart: 1
+yearEnd: 2021
+monthEnd: 2
 tags: [C, C++, Java]
 image: test
 responsibilities:

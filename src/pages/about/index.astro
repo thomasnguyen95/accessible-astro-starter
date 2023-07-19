@@ -1,0 +1,51 @@
+---
+import { Icon } from 'astro-icon'
+import {
+    Breadcrumbs,
+    BreadcrumbsItem,
+    Card,
+    Notification,
+} from 'accessible-astro-components'
+import { getCollection, getEntry } from 'astro:content'
+
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Experience from '../../components/Experience.astro'
+import AboutMeHero from '../../components/AboutMeHero.astro'
+
+const allExperiences = await getCollection('experience')
+const vtEducation = await getEntry('education', 'virginia-tech')
+
+const { page } = Astro.props
+---
+
+<DefaultLayout title="About Me" description="This is the standard information about my experience.">
+    <section class="my-12">
+        <div class="space-content container">
+            <div class="space-content">
+                <Breadcrumbs>
+                    <BreadcrumbsItem href="/" label="Home" />
+                    <BreadcrumbsItem currentPage={true} href="/about" label="About Me" />
+                </Breadcrumbs>
+            </div>
+        </div>
+    </section>
+    <section class="my-12">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-1">
+                <div class="space-content">
+                    <h1>Profile</h1>
+                    <hr />
+                    <AboutMeHero education={vtEducation} />
+                    <h2>Work Experience</h2>
+                    {allExperiences.reverse().map((p) => <Experience exp={p} />)}
+                    <h2>Other Services</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-1">
+                        <div>some service</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</DefaultLayout>
+
+<style lang="scss"></style>

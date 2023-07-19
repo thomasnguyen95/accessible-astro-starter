@@ -2,8 +2,10 @@
 title: Jr. Software Engineer
 company: 'AbleVets'
 project: 'Mobile Scheduling Enhancements (MSE)'
-timeStart: 08/01/2017
-timeEnd: 01/01/2019
+yearStart: 2017
+monthStart: 8
+yearEnd: 2019
+monthEnd: 1
 tags: [C, C++, Java]
 image: test
 responsibilities:

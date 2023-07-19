@@ -1,0 +1,17 @@
+---
+const { tag } = Astro.props
+---
+
+<div class="tag rounded-full px-2 py-1 font-mono font-semibold text-black shadow">
+    {tag}
+</div>
+
+<style lang="scss">
+    .tag {
+        background: var(--primary-100);
+    }
+
+    :global(.darkmode .tag) {
+        background: var(--secondary-100);
+    }
+</style>

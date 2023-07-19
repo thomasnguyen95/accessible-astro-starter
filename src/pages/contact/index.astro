@@ -1,0 +1,32 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { Breadcrumbs, BreadcrumbsItem, Modal, Notification } from 'accessible-astro-components'
+---
+
+<DefaultLayout title="Contact Me" description="This is the standard method of reaching me.">
+    <section class="my-12">
+        <div class="space-content container">
+            <div class="space-content">
+                <Breadcrumbs>
+                    <BreadcrumbsItem href="/" label="Home" />
+                    <BreadcrumbsItem currentPage={true} href="/contact" label="Contact" />
+                </Breadcrumbs>
+            </div>
+        </div>
+    </section>
+    <section class="my-12">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-1">
+                <div class="space-content">
+                    <h1>Contact Information</h1>
+                    <form>
+                        <input type="text" placeholder="Name" autocomplete="off" />
+                        <input type="text" placeholder="Email" autocomplete="off" />
+                        <input type="text" placeholder="Message" autocomplete="off" />
+                        <button>Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</DefaultLayout>

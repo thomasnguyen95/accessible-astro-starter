@@ -1,0 +1,76 @@
+---
+import { Icon } from 'astro-icon'
+
+const { src = '/astronaut-hero-img.webp' } = Astro.props
+
+const dateOptions = {
+    year: 'numeric',
+    month: 'long',
+}
+
+const { education } = Astro.props
+const eduData = education.data
+const endDate = new Intl.DateTimeFormat('en-US', dateOptions).format(new Date(eduData.yearEnd, eduData.monthEnd - 1))
+---
+
+<section class="hero my-24">
+    <div class="container">
+        <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+            <div class="flex flex-col items-center gap-8 rounded-xl border-2 p-4 shadow-lg md:items-start">
+                <p class="text-center font-serif text-xl">
+                    As a <strong class="text-gradient">software engineer</strong> with over 5 years of experience, I have
+                    a track record of delivering customer-driven services, technical support, and full-stack development
+                    using modern development tools and secure coding practices. I am adept at designing and developing optimized,
+                    compliant solutions to overcome difficult challenges, and have experience managing mission-critical systems.
+                    I am excited about leveraging my skills to build and modernize cutting-edge software solutions.
+                </p>
+                <div class="info-list mx-auto">
+                    <ul class="list-none px-4">
+                        <li class="mb-1 w-full md:w-1/2"><span><strong>Name:</strong>Thomas Nguyen</span></li>
+                        <li class="mb-1 w-full md:w-1/2"><span><strong>Location:</strong>Herndon, Virginia</span></li>
+                        <li class="mb-1 w-full md:w-1/2"><span><strong>Degree:</strong>{eduData.degree}</span></li>
+                        <li class="mb-1 w-full md:w-1/2"><span><strong>Major:</strong>{eduData.major}</span></li>
+                        <li class="mb-1 w-full md:w-1/2"><span><strong>Graduation:</strong>{endDate}</span></li>
+                        <li class="mb-1 w-full md:w-1/2"><span><strong>University:</strong>{eduData.name}</span></li>
+                    </ul>
+                </div>
+            </div>
+            <img class="hidden lg:block" src={src} alt="" decoding="async" />
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .text-gradient {
+        background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    :global(.darkmode .text-gradient) {
+        background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .info-list ul {
+        font-size: 0;
+        li {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 14px;
+            font-weight: 600;
+
+            strong {
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: var(--secondary-100);
+            }
+        }
+    }
+</style>

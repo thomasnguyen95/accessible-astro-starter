@@ -2,8 +2,10 @@
 title: Software Engineer Intern
 company: 'AbleVets'
 project: 'Patient-Generated Data (PGD)'
-timeStart: 05/01/2017
-timeEnd: 08/01/2017
+yearStart: 2017
+monthStart: 5
+yearEnd: 2017
+monthEnd: 8
 tags: ['BackboneJS', 'Angular 1', 'Java', 'SinonJS', 'JasmineJS', 'REST', 'FHIR', 'API']
 image: test
 responsibilities:
